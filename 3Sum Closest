@@ -1,0 +1,67 @@
+Sorting the array first, then use Two Pointers approach:
+
+If we use brute force, the time complexity will reach O(n^3) , it will TLE, so we need to reduce time complexity.
+
+Sorting the array first, the time complexity O(nlogn).
+
+Traverse the array nums, every time we fixed a value nums[i],
+
+Then use the front pointer to point to left = i+1, and the rear pointer to point to right = nums.length - 1,
+
+Let sum = nums[i] + nums[left] + nums[right], judge the target and sum, If it is closer, update the result ans.
+
+Judge relationship between sum and target, because the array is ordered. If sum > target, right--, If sum < target, left++. If sum == target, means that the distance is 0 and return the result.
+
+In the whole traversal process, we have to traversal n times, the two pointer is n times, and the time complexity is O(n^2), so the Total time complexity: O(nlogn)+O(n^2).
+
+Explore More Leetcode Solutions. 😉😃💗
+
+    public static int threeSumClosest(int[] nums, int target) {
+        if (nums == null || nums.length < 3) {
+            return 0;
+        }
+
+        int len = nums.length;
+
+        Arrays.sort(nums);
+
+        int ans = nums[0] + nums[1] + nums[2];
+
+        if (nums[0] > target && target > 0) {
+            return ans;
+        } else if (nums[len - 1] <= target && target < 0) {
+            return nums[len - 3] + nums[len - 2] + nums[len - 1];
+        }
+
+        for (int i = 0; i < len; i++) {
+            if (i > 1 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            int left = i + 1;
+            int right = len - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if (Math.abs(sum - target) < Math.abs(ans - target)) {
+                    ans = sum;
+                }
+
+                if (sum == target) {
+                    return target;
+                } else if (sum > target) {
+                    right--;
+                    while (left < right && nums[right] == nums[right + 1]) {
+                        right--;
+                    }
+                } else {
+                    left++;
+                    while (left > right && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                }
+            }
+        }
+
+        return ans;
+    }
