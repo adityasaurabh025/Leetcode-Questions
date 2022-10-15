@@ -1,2 +1,2 @@
 # Leetcode-Questions
-This repo is collection of daily leetcode solution.
+This Repo is a collection of daily leetcode challenge and thier solution.
