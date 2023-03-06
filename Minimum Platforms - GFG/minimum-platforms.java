@@ -49,27 +49,63 @@ class Solution
     {
         // add your code here
         //1st approach, using nested loop
+        //*************************************************************
+        // int plat_needed = 1, result = 1;
+ 
+        // // run a nested  loop to find overlap
+        // for (int i = 0; i < n; i++) {
+        //     // minimum platform
+        //     plat_needed = 1;
+ 
+        //     for (int j = 0; j < n; j++) {
+        //         if (i != j)
+        //             // check for overlap
+        //             if (arr[i] >= arr[j]
+        //                 && dep[j] >= arr[i])
+        //                 plat_needed++;
+        //     }
+ 
+        //     // update result
+        //     result = Math.max(result, plat_needed);
+        // }
+ 
+        // return result;
+        //TC-O(N^2)
+        //*******************************************************************
+        
+        //SORTING APPROACH
+        // arr = [9:00, 9:40, 9:50, 11:00, 15:00, 18:00]
+        // dep = [9:10, 11:20, 11:30, 12:00, 19:00, 20:00]
+        Arrays.sort(arr);
+        Arrays.sort(dep);
+ 
+        // plat_needed indicates number of platforms
+        // needed at a time
         int plat_needed = 1, result = 1;
+        int i = 1, j = 0;
  
-        // run a nested  loop to find overlap
-        for (int i = 0; i < n; i++) {
-            // minimum platform
-            plat_needed = 1;
- 
-            for (int j = 0; j < n; j++) {
-                if (i != j)
-                    // check for overlap
-                    if (arr[i] >= arr[j]
-                        && dep[j] >= arr[i])
-                        plat_needed++;
+        // Similar to merge in merge sort to process
+        // all events in sorted order
+        while (i < n && j < n) {
+            // If next event in sorted order is arrival,
+            // increment count of platforms needed
+            if (arr[i] <= dep[j]) {
+                plat_needed++;
+                i++;
             }
  
-            // update result
-            result = Math.max(result, plat_needed);
+            // Else decrement count of platforms needed
+            else if (arr[i] > dep[j]) {
+                plat_needed--;
+                j++;
+            }
+ 
+            // Update result if needed
+            if (plat_needed > result)
+                result = plat_needed;
         }
  
         return result;
-        
     }
     
 }
