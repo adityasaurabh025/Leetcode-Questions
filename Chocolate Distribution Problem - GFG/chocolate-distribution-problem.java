@@ -41,11 +41,11 @@ class Solution
         // your code here
         
         if(n<m) return -1;
-        int min=Integer.MAX_VALUE;
+        int min=Integer.MAX_VALUE;// consider the initial value as max
         Collections.sort(a); //To sort the ArrayList we use Collections.sort
         for(int i=0;i<=a.size()-m; i++)// i<8-5=3, because last 5 size ka window index 3 tak jayega
         {
-            min=Math.min(min,(a.get(i+m-1)-a.get(i)));
+            min=Math.min(min,(a.get(i+m-1)-a.get(i)));//min me minimum of difference of end=i+m-1 and start=i
         }
         return (long)min;
         
@@ -56,3 +56,4 @@ class Solution
 // A = {3, 4, 1, 9, 56, 7, 9, 12}
 
 // A=1,3,4,7,9,9,12,56
+
