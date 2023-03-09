@@ -43,13 +43,19 @@ class Solution {
 
    void reverseInGroups(ArrayList<Integer> arr, int n, int k) {
 
-          ArrayList<Integer> al  = new ArrayList<>();
+          ArrayList<Integer> al  = new ArrayList<>();//create an arraylist to add all the elements
 
-        for(int i =0; i<n; i= i+k){
+        for(int i =0; i<n; i= i+k){// run the loop by k times in each iteration
 
            int start = i;
 
-           int end= Math.min(n-1,i+k-1);
+           int end= Math.min(n-1,i+k-1);//i+k isliye liye hain kyuki each iteration i+k times increase
+           //ho rahe, so i+k-1 hamesha next subgroup ke ek element pehle rahega
+           //{1,2,3,4,5}
+           //start=1
+           //end=4
+           //start=2
+           //end
 
            while(end>start){
 
