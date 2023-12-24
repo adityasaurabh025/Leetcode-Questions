@@ -1,6 +1,32 @@
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        nums.sort() #sort the elements 
-        return nums[(len(nums))//2] #If number is present more than n/2 times then it will be present at n/2
+    def majorityElement(self, arr: List[int]) -> int:
+        arr.sort()
+        count=0
+        majority=(len(arr)//2)
+        for i in range(len(arr)-1):
+            if arr[i]==arr[i+1]:
+                count+=1
+                if count>majority:
+                    return arr[i]
+            else:
+                count=1
+        return arr[0]
             
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      #sort and count
+      #dict se count
+        
         
