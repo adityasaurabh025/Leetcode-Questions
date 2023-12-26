@@ -13,6 +13,8 @@ class Solution:
         #     right+=1
         # return max_profit_so_far
         
+        
+        #using DP
         if not prices:
             return 0
         max_profit=0
