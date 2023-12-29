@@ -23,4 +23,4 @@ class Solution:
             r=farthest
             res+=1
         return res
-    
+#https://www.youtube.com/watch?v=dJ7sWiOoK7g&ab_channel=NeetCode 
