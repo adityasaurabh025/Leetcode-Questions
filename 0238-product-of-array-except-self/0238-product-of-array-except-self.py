@@ -53,5 +53,23 @@ class Solution:
             ans[i]=(pre[i] * suff[i])
         return ans
         
+        #TC:-O(N), SC(N)
+        '''
+        TC:-O(N), SC:- O(1)
+        n = len(nums)
+        ans = [1] * n
+
+    # Calculate prefix products and store them in ans array
+    for i in range(1, n):
+        ans[i] = ans[i - 1] * nums[i - 1]
+
+    # Calculate the product of suffix and update the result in-place
+    suffix_product = 1
+    for i in range(n - 1, -1, -1):
+        ans[i] *= suffix_product
+        suffix_product *= nums[i]
+
+    return ans
+        '''
         
         
