@@ -11,4 +11,4 @@ class Solution:
         else:
             median1= merged[total_len//2-1]
             median2= merged[total_len//2]
-            return float((median1 + median2)/2.0)
+            return float((median1 + median2)/2)
