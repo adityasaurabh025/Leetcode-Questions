@@ -26,6 +26,7 @@ Move the pointers based on whether the sum is less than or greater than the targ
 This approach has a time complexity of O(n log n) due to sorting and a space complexity of O(1).
         '''
         # nums_with_index = [(num, i) for i, num in enumerate(nums)]
+        #nums_with_index.sort()
         # left, right = 0, len(nums) - 1
         # while left < right:
         #     current_sum = nums_with_index[left][0] + nums_with_index[right][0]
