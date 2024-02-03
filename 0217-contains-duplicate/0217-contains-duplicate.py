@@ -1,6 +1,16 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-            return len(nums) > len(set(nums))
+        seen=set()
+        
+        for num in nums:
+            if num in seen:
+                return True
+                
+            seen.add(num)
+        return False
+        
+            #return len(nums) > len(set(nums))
+        #TC:- O(N), SC:- O(N)
 
 #Algo
 ''' 
@@ -23,6 +33,9 @@ so, convert the list into set and
 #             if nums[num]==nums[num+1]:
 #                 return True
 #         return False
+# TC:- O(nlogn), SC:- O(1)
+
+
         
         
         
