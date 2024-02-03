@@ -19,9 +19,9 @@ class Solution:
             digit1 = l1.val if l1 is not None else 0
             digit2 = l2.val if l2 is not None else 0
 
-            sum = digit1 + digit2 + carry
-            digit = sum % 10
-            carry = sum // 10
+            curr_sum = digit1 + digit2 + carry
+            digit = curr_sum % 10
+            carry = curr_sum // 10
 
             newNode = ListNode(digit)
             tail.next = newNode
