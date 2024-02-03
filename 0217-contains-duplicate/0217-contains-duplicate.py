@@ -3,7 +3,7 @@ class Solution:
             return len(nums) > len(set(nums))
 
 #Algo
-'''
+''' 
 Sort the list
 iterate through the list
 If first element is equal to second - then it has twice elements
