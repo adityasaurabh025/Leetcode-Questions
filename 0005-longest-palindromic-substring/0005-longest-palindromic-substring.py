@@ -1,5 +1,14 @@
 class Solution:
     def expand_from_center(left, right):
+        """
+        Algorithm :
+At starting we have maz_str = s[0] and max_len = 1 as every single character is a palindrome.
+Now, we will iterate over the string and for every character we will expand around its center.
+For odd length palindrome, we will consider the current character as the center and expand around it.
+For even length palindrome, we will consider the current character and the next character as the center and expand around it.
+We will keep track of the maximum length and the maximum substring.
+Print the maximum substring.
+        """
         while left >= 0 and right < len(s) and s[left] == s[right]:
             left -= 1
             right += 1
