@@ -12,3 +12,8 @@ class Solution:
         for i in range(1,n+1):
             xor^=i
         return xor
+    """
+    When we XOR all the numbers in the nums list, any number that appears twice will cancel out, leaving only the missing number.
+Similarly, when we XOR all the numbers from 1 to n, any number that appears twice will cancel out, leaving only the missing number.
+Finally, XORing the two results will leave us with only the missing number, as the other numbers will have been XORed twice and canceled out.
+    """
