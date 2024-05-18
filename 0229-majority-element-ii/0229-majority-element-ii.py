@@ -7,13 +7,16 @@ class Solution:
         for num in nums:
             if num in mp:
                 mp[num]+=1
+                #If num is already a key in mp, this line increments the count (value) associated with num by 1. This means num has been seen again in the list.
             else:
                 mp[num]=1
+                #If num is not already a key in count_map, this block executes. It adds num as a new key to count_map with a value of 1, indicating that num has been seen for the first time.
         for num, count in mp.items():
             if count > n // 3:
                 res.append(num)
     
         return res
+    
 #         if not nums:
 #             return []
 
