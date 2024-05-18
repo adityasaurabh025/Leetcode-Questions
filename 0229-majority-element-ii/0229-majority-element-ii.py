@@ -14,7 +14,7 @@ class Solution:
             else:
                 if count > n // 3:
                     result.append(nums[i - 1])
-                count = 1
+                count=1
     
     # Handle the last element
         if count > n // 3:
