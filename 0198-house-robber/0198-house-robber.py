@@ -5,16 +5,25 @@ class Solution:
             return 0
         elif len(nums)==1:
             return nums[0]
-        
-        prev1 = max(nums[0], nums[1])
-        prev2 = nums[0]
         n=len(nums)
-        for i in range(2, n):
-            current = max(nums[i] + prev2, prev1)
-            prev2 = prev1
-            prev1 = current
+        dp = [0] * n
+        dp[0] = nums[0]
+        dp[1] = max(nums[0], nums[1])
     
-        return prev1
+        for i in range(2, n):
+            dp[i] = max(nums[i] + dp[i-2], dp[i-1])
+    
+        return dp[-1]
+        
+#         prev1 = max(nums[0], nums[1])
+#         prev2 = nums[0]
+#         n=len(nums)
+#         for i in range(2, n):
+#             current = max(nums[i] + prev2, prev1)
+#             prev2 = prev1
+#             prev1 = current
+    
+#         return prev1
     
     """
     Calculate current:
