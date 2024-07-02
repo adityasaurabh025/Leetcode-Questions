@@ -7,7 +7,7 @@ class Solution:
         prev2=1
         
         for i in range(2, n+1):
-            curr=prev1+prev2
+            curr=prev1+prev2 #create theree pointers, add prev two in current and assign to move ahead
             prev2=prev1
             prev1=curr
         
