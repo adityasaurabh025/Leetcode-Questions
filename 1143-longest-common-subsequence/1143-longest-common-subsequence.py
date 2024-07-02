@@ -18,7 +18,8 @@ class Solution:
     
         return previous[n]
         
-#         dp=[[0]* (n) for _ in range(m)] # fill zero in array
+#   Tabulation      
+#dp=[[0]* (n) for _ in range(m)] # fill zero in array
         
 #         for i in range(1, m):
 #             for j in range(1, n):
