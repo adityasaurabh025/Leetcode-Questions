@@ -12,9 +12,9 @@ class Solution:
             mid= (low+high)//2
             
             if nums[mid]< nums[mid+1]:
-                low=mid+1
+                low=mid+1 # If mid element is less, the peak is in the right half.
             else:
-                high= mid
+                high= mid # If mid element is greater, the peak is in the left half.
         return low
                 
         
