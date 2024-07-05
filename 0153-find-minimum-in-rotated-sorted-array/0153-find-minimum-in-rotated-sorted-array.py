@@ -33,12 +33,7 @@ Since nums[mid] <= nums[right], set right = mid = 4.
 Now, left = 4, right = 4:
 The loop terminates, and nums[left] = nums[4] = 0 is the minimum element.
 This approach ensures that the solution runs in 
-\U0001d442
-(
-log
-⁡
-\U0001d45b
-)
+\U0001d442(log\U0001d45b)
 O(logn) time, making it efficient for large arrays.
 """
           
