@@ -9,6 +9,6 @@ class Solution:
         if total_len%2==1:
             return float(merged[total_len//2])
         else:
-            median1= merged[total_len//2-1]
+            median1= merged[total_len//2-1] #element before mid
             median2= merged[total_len//2]
             return float((median1 + median2)/2)
