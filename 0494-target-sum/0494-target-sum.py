@@ -2,10 +2,12 @@ class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         total_sum=sum(nums)
         
-        if (total_sum+ target)%2!=0 or total_sum< abs(target):
+        if (total_sum+ target)%2!=0 or total_sum< (target):
             return 0
         
         subset_sum=(target+total_sum)//2
+        if subset_sum < 0:
+            return 0
         
         dp=[0]* (subset_sum+1)
         
