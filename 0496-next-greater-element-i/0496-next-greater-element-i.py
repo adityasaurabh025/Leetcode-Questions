@@ -1,5 +1,19 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        next_greater={}
+        stack=[]
+        
+        for num in nums2:
+            while stack and num> stack[-1]:
+                next_greater[stack.pop()]= num
+            stack.append(num)
+        while stack:
+            next_greater[stack.pop()]=-1
+        ans= [next_greater[num] for num in nums1]
+        
+        return ans
+        
+        """
         ans=[-1]*len(nums1)
         
         for i in range(len(nums1)):
@@ -13,5 +27,7 @@ class Solution:
                     break
             ans[i]= next_greater
         return ans
-                    
         
+        TC- O(M*N), SC:- O(M)
+                    
+        """
